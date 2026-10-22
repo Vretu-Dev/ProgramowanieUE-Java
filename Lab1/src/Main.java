@@ -1,0 +1,186 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Zad1();
+        //Zad2();
+        //Zad3();
+        //Zad4();
+        //Zad5();
+        //Zad6();
+        //Zad7();
+    }
+
+    private static void Zad1()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        // Zad 1
+        System.out.print("Podaj bok A: ");
+        int a = scan.nextInt();
+
+        System.out.print("Podaj bok B: ");
+        int b = scan.nextInt();
+
+        System.out.print("Pole wynosi: " + (a*b));
+    }
+
+    private static void Zad2()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Podaj bok A: ");
+        int bokA = scan.nextInt();
+
+        System.out.print("Podaj bok B: ");
+        int bokB = scan.nextInt();
+
+        System.out.print("Podaj bok C: ");
+        int bokC = scan.nextInt();
+
+        try {
+            if ((bokA + bokB < bokC) || (bokA + bokC < bokB) || (bokB + bokA < bokA))
+            {
+                throw new IllegalArgumentException();
+            }
+        } catch (IllegalArgumentException e)
+        {
+            System.out.println("Taki trójkąt nie może istnieć");
+        }
+
+        if(Math.pow(bokA, 2) + Math.pow(bokB, 2) > Math.pow(bokC, 2))
+        {
+            System.out.println("Powstały trójkąt jest ostrokątny");
+        }
+        else if(Math.pow(bokA, 2) + Math.pow(bokB, 2) < Math.pow(bokC, 2))
+        {
+            System.out.println("Powstały trójkąt jest rozwartokątny");
+        }
+        else {
+            System.out.println("Powstały trójkąt jest prostokątny");
+        }
+    }
+
+    private static void Zad3()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        try {
+            System.out.print("Podaj bok A: ");
+            double a = scan.nextDouble();
+
+            if(a == 0)
+            {
+                throw new IllegalArgumentException("To nie jest równanie kwadratowe");
+            }
+
+
+            System.out.print("Podaj bok B: ");
+            double b = scan.nextDouble();
+
+            System.out.print("Podaj bok C: ");
+            double c = scan.nextDouble();
+
+            double delta = Math.pow(b, 2) - 4 * a * c;
+
+            if (delta < 0)
+            {
+                throw new Exception("Brak pierwiastków");
+            }
+
+            double deltasqrt = Math.sqrt(delta);
+
+            if (delta == 0)
+            {
+                double sqrt = -b / (2*a);
+                System.out.println("Pierwiastek" + sqrt);
+            }
+            else
+            {
+                double sqrt1 = (-b - deltasqrt)/ (2*a);
+                double sqrt2 = (-b + deltasqrt) / (2*a);
+                System.out.println("Pierwiastek 1: " + sqrt1);
+                System.out.println("Pierwiastek 2: " + sqrt2);
+
+            }
+        } catch (IllegalArgumentException ex) {
+            System.out.println(ex);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    private static void Zad4()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        Random rand = new Random();
+
+        System.out.print("Podaj wielkość zbioru: ");
+        int liczba = scan.nextInt();
+
+        List<Integer> list = new ArrayList<>();
+
+        System.out.print("Wylosowane: ");
+        int suma = 0;
+
+        for(int i = 0; i < liczba; i++)
+        {
+            int wylosowana = rand.nextInt(1, 100);
+            list.add(wylosowana);
+            suma += wylosowana;
+        }
+
+        for(int item : list)
+        {
+            System.out.print(item + " ");
+        }
+        System.out.println();
+
+        int max = Collections.max(list);
+        int min = Collections.min(list);
+        int avg = suma / liczba;
+        System.out.println("Wartość maksymalna: " + max);
+        System.out.println("Wartość minimalna: " + min);
+        System.out.println("Wartość średnia: " + avg);
+    }
+
+    private static void Zad5()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        for(int i = 1; i < 11; i++)
+        {
+            for (int j = 1; j < 11; j++)
+            {
+                System.out.printf("%-3d", i * j);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void Zad6()
+    {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Podaj bok A: ");
+        int a = scan.nextInt();
+
+        System.out.print("Podaj bok B: ");
+        int b = scan.nextInt();
+
+        Prostokat p1 = new Prostokat(a,b);
+
+        System.out.print(p1.Pole());
+    }
+
+    private static void Zad7()
+    {
+        Energia en = new Energia(100, 150);
+
+        double obecny = en.getStanObecny();
+        double poczatkowy = en.getStanPoczatkowy();
+        double zuzycie = en.GetZuzycie();
+    }
+}
