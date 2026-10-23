@@ -3,20 +3,20 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Zad1();
-        //Zad2();
-        //Zad3();
-        //Zad4();
-        //Zad5();
-        //Zad6();
-        //Zad7();
-    }
 
-    private static void Zad1()
-    {
         Scanner scan = new Scanner(System.in);
 
-        // Zad 1
+        Zad1(scan);
+        Zad2(scan);
+        Zad3(scan);
+        Zad4(scan);
+        Zad5(scan);
+        Zad6(scan);
+        Zad7();
+    }
+
+    private static void Zad1(Scanner scan)
+    {
         System.out.print("Podaj bok A: ");
         int a = scan.nextInt();
 
@@ -26,10 +26,8 @@ public class Main {
         System.out.print("Pole wynosi: " + (a*b));
     }
 
-    private static void Zad2()
+    private static void Zad2(Scanner scan)
     {
-        Scanner scan = new Scanner(System.in);
-
         System.out.print("Podaj bok A: ");
         int bokA = scan.nextInt();
 
@@ -62,10 +60,8 @@ public class Main {
         }
     }
 
-    private static void Zad3()
+    private static void Zad3(Scanner scan)
     {
-        Scanner scan = new Scanner(System.in);
-
         try {
             System.out.print("Podaj bok A: ");
             double a = scan.nextDouble();
@@ -111,10 +107,8 @@ public class Main {
         }
     }
 
-    private static void Zad4()
+    private static void Zad4(Scanner scan)
     {
-        Scanner scan = new Scanner(System.in);
-
         Random rand = new Random();
 
         System.out.print("Podaj wielkość zbioru: ");
@@ -146,10 +140,8 @@ public class Main {
         System.out.println("Wartość średnia: " + avg);
     }
 
-    private static void Zad5()
+    private static void Zad5(Scanner scan)
     {
-        Scanner scan = new Scanner(System.in);
-
         for(int i = 1; i < 11; i++)
         {
             for (int j = 1; j < 11; j++)
@@ -160,10 +152,8 @@ public class Main {
         }
     }
 
-    private static void Zad6()
+    private static void Zad6(Scanner scan)
     {
-        Scanner scan = new Scanner(System.in);
-
         System.out.print("Podaj bok A: ");
         int a = scan.nextInt();
 
