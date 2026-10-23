@@ -10,7 +10,7 @@ public class Main {
         Zad2(scan);
         Zad3(scan);
         Zad4(scan);
-        Zad5(scan);
+        Zad5();
         Zad6(scan);
         Zad7();
     }
@@ -47,11 +47,13 @@ public class Main {
             System.out.println("Taki trójkąt nie może istnieć");
         }
 
-        if(Math.pow(bokA, 2) + Math.pow(bokB, 2) > Math.pow(bokC, 2))
+        double v = Math.pow(bokA, 2) + Math.pow(bokB, 2);
+
+        if(v > Math.pow(bokC, 2))
         {
             System.out.println("Powstały trójkąt jest ostrokątny");
         }
-        else if(Math.pow(bokA, 2) + Math.pow(bokB, 2) < Math.pow(bokC, 2))
+        else if(v < Math.pow(bokC, 2))
         {
             System.out.println("Powstały trójkąt jest rozwartokątny");
         }
@@ -85,7 +87,7 @@ public class Main {
                 throw new Exception("Brak pierwiastków");
             }
 
-            double deltasqrt = Math.sqrt(delta);
+            double deltaSqrt = Math.sqrt(delta);
 
             if (delta == 0)
             {
@@ -94,8 +96,8 @@ public class Main {
             }
             else
             {
-                double sqrt1 = (-b - deltasqrt)/ (2*a);
-                double sqrt2 = (-b + deltasqrt) / (2*a);
+                double sqrt1 = (-b - deltaSqrt)/ (2*a);
+                double sqrt2 = (-b + deltaSqrt) / (2*a);
                 System.out.println("Pierwiastek 1: " + sqrt1);
                 System.out.println("Pierwiastek 2: " + sqrt2);
 
@@ -140,7 +142,7 @@ public class Main {
         System.out.println("Wartość średnia: " + avg);
     }
 
-    private static void Zad5(Scanner scan)
+    private static void Zad5()
     {
         for(int i = 1; i < 11; i++)
         {
